@@ -1,4 +1,4 @@
-
+# Author: Praveenkumar Hiremath, TU Bergakademie Freiberg, Sachsen, Germany (Postleitzahl: 09599). April, 2016. 
 
 import numpy as np
 import matplotlib.pyplot as plt
