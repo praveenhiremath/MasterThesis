@@ -15,11 +15,9 @@ combox = np.append(xdata,xdata)
 comboy = np.append(ydata_iso,ydata_tetra)
 
 if len(xdata) != len(ydata_iso):
-    raise(Exception('Unequal xdata and ydata_iso data length'))
+    raise(Exception('Unequal xdata and ydata_iso arrays lengths'))
 if len(xdata) != len(ydata_tetra):
-    raise(Exception('Unequal xdata and ydata_tetra data length'))
-
-
+    raise(Exception('Unequal xdata and ydata_tetra array lengths'))
 
 
 #Recast xdata and ydata into numpy arrays so we can use their handy features
@@ -39,9 +37,8 @@ def Tetra(eta, C11, C12):
     return dene_dvol_tetra
 
 def Iso_Tetra(combo_eta,C11,C12):
-    # single data reference passed in, extract separate data
-    xdata1 = combo_eta[:len(xdata)] # first data
-    xdata2 = combo_eta[len(xdata):] # second data
+    xdata1 = combo_eta[:len(xdata)] 
+    xdata2 = combo_eta[len(xdata):] 
 
     iso_result = Iso(xdata1, C11, C12)
     tetra_result = Tetra(xdata2, C11, C12)
