@@ -1,4 +1,4 @@
-
+# Author: Praveenkumar Hiremath, TU Bergakademie Freiberg, Sachsen, Germany (Postleitzahl: 09599). May, 2016. 
 
 import numpy as np
 from pylab import *
