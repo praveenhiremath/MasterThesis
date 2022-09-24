@@ -6,6 +6,7 @@ import sys
 import numpy as np
 from pathlib import Path
 
+info_file='./INFO.OUT'
 f_in = open('INFO.OUT','r')
 info_file_data = f_in.readlines()
 f_in.close()
@@ -96,12 +97,14 @@ for i in range(0,num_atoms,1):
 
 #    position_forces.append('0 \t'+str(np.multiply(float(position[i].split()[0]),np.linalg.norm(vectors[0,:])))+' \t'+str(np.multiply(float(position[i].split()[1]),np.linalg.norm(vectors[1,:])))+' \t'+str(np.multiply(float(position[i].split()[2]),np.linalg.norm(vectors[2,:])))+' \t'+forces[i]+'\n')
 
-#path_info_file = 
+path_info_file = os.path.abspath(info_file)
 
 f_out = open('potfit.config','w')
 f_out.write('#N '+str(num_atoms)+' '+str(num_species))
 f_out.write('\n')
 f_out.write('#C '+str(type_species))
+f_out.write('\n')
+f_out.write('### Atomic energies and forces are taken from the file: '+path_info_file)
 f_out.write('\n')
 f_out.write('#X '+str(vectors[0,:]).replace("[",'').replace("]",''))
 f_out.write('\n')
